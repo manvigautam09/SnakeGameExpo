@@ -56,25 +56,25 @@ export default class Board extends Component {
     return snakeHeadInteger;
   }
   upMovementLoop() {
-    up = setTimeout(this.snakeUpwardMove, 1000);
+    up = setTimeout(this.snakeUpwardMove, 500);
   }
   upMovementTerminate() {
     clearTimeout(up);
   }
   downMovementLoop() {
-    down = setTimeout(this.snakeDownwardMove, 1000);
+    down = setTimeout(this.snakeDownwardMove, 500);
   }
   downMovementTerminate() {
     clearTimeout(down);
   }
   leftMovementLoop() {
-    left = setTimeout(this.snakeLeftMove, 1000);
+    left = setTimeout(this.snakeLeftMove, 500);
   }
   leftMovementTerminate() {
     clearTimeout(left);
   }
   rightMovementLoop() {
-    right = setTimeout(this.snakeRightMove, 1000);
+    right = setTimeout(this.snakeRightMove, 500);
   }
   rightMovementTerminate() {
     clearTimeout(right);
@@ -93,7 +93,9 @@ export default class Board extends Component {
     }
 
     const newSnakeHead = String(newSnakeHeadInteger);
+
     if (newSnakeHead == this.state.snakePosition[1]) {
+      this.downMovementLoop();
       return;
     }
     if (this.state.snakePosition.includes(newSnakeHead)) {
@@ -133,6 +135,7 @@ export default class Board extends Component {
     }
     const newSnakeHead = String(newSnakeHeadInteger);
     if (newSnakeHead == this.state.snakePosition[1]) {
+      this.rightMovementLoop();
       return;
     }
     if (this.state.snakePosition.includes(newSnakeHead)) {
@@ -172,6 +175,7 @@ export default class Board extends Component {
 
     const newSnakeHead = String(newSnakeHeadInteger);
     if (newSnakeHead == this.state.snakePosition[1]) {
+      this.leftMovementLoop();
       return;
     }
     if (this.state.snakePosition.includes(newSnakeHead)) {
@@ -211,6 +215,7 @@ export default class Board extends Component {
 
     const newSnakeHead = String(newSnakeHeadInteger);
     if (newSnakeHead == this.state.snakePosition[1]) {
+      this.upMovementLoop();
       return;
     }
     if (this.state.snakePosition.includes(newSnakeHead)) {
@@ -341,6 +346,7 @@ const styles = StyleSheet.create({
     marginTop: 100,
     height: 300,
     width: 300
+    //backgroundColor: "yellow"
   },
   indicators: {
     flexDirection: "row",
