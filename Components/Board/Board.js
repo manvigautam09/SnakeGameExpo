@@ -47,7 +47,10 @@ export default class Board extends Component {
       return;
     }
     const foodPosition = String(fPosition);
-
+    if (foodPosition == this.state.foodPosition) {
+      this.generateFood();
+      return;
+    }
     this.setState({ foodPosition });
   }
   getSnakeHeadPosition() {
@@ -56,25 +59,25 @@ export default class Board extends Component {
     return snakeHeadInteger;
   }
   upMovementLoop() {
-    up = setTimeout(this.snakeUpwardMove, 500);
+    up = setTimeout(this.snakeUpwardMove, 200);
   }
   upMovementTerminate() {
     clearTimeout(up);
   }
   downMovementLoop() {
-    down = setTimeout(this.snakeDownwardMove, 500);
+    down = setTimeout(this.snakeDownwardMove, 200);
   }
   downMovementTerminate() {
     clearTimeout(down);
   }
   leftMovementLoop() {
-    left = setTimeout(this.snakeLeftMove, 500);
+    left = setTimeout(this.snakeLeftMove, 200);
   }
   leftMovementTerminate() {
     clearTimeout(left);
   }
   rightMovementLoop() {
-    right = setTimeout(this.snakeRightMove, 500);
+    right = setTimeout(this.snakeRightMove, 200);
   }
   rightMovementTerminate() {
     clearTimeout(right);
@@ -269,7 +272,7 @@ export default class Board extends Component {
                             position
                           )
                             ? "red"
-                            : "skyblue"
+                            : "transparent"
                         }
                       ]}
                     >
@@ -345,8 +348,8 @@ const styles = StyleSheet.create({
   snakeGameContainer: {
     marginTop: 100,
     height: 300,
-    width: 300
-    //backgroundColor: "yellow"
+    width: 300,
+    backgroundColor: "#DBBE97"
   },
   indicators: {
     flexDirection: "row",
