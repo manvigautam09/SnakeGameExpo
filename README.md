@@ -1,7 +1,7 @@
 # Snake Game
 -- made using Expo SDK v33 runs on both mobile and web using same react-native code.
   ## Snake Game web version
-    https://giphy.com/gifs/mA7jYMKSc3lQW8wvZo
+    https://github.com/ManviSharma09/SnakeGameExpo/tree/raw/master/assets/snakeGameExpoWeb.gif
 
   ## Snake Game mobile version
-    https://giphy.com/gifs/kdcXtlhTDXgkEaGMLT
+     https://github.com/ManviSharma09/SnakeGameExpo/tree/raw/master/assets/snakeGameExpo.gif
